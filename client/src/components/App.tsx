@@ -2,7 +2,7 @@ import * as React from 'react';
 
 
 const App : React.FC = ()=>{
-return <div>Hello This is Frontend Branch</div>
+return <div>Hello World</div>
 }
 
 export default App
