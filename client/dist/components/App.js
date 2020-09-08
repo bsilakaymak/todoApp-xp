@@ -18,9 +18,45 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
+const grommet_1 = require("grommet");
+const TodoApp_1 = __importDefault(require("./TodoApp"));
+const utils_1 = require("grommet/utils");
+const react_router_dom_1 = require("react-router-dom");
+const EditTodo_1 = __importDefault(require("./EditTodo"));
+const TodosContext_1 = require("./TodosContext");
+const customTheme = utils_1.deepMerge(grommet_1.grommet, {
+    global: {
+        font: {
+            family: 'Verdana',
+        },
+    },
+    textInput: {
+        extend: `::placeholder{
+      color:#F2F2F2;
+      padding:0;
+      font-weight:500;
+    };`,
+    },
+    textArea: {
+        extend: `::placeholder{
+      color:#7D4BDA;
+      opacity:0.75;
+      padding:0;
+      font-weight:500;
+    };`,
+    },
+});
 const App = () => {
-    return React.createElement("div", null, "Hello This is the frontend branch");
+    return (React.createElement(grommet_1.Grommet, { theme: customTheme },
+        React.createElement(TodosContext_1.TodosProvider, null,
+            React.createElement(react_router_dom_1.BrowserRouter, null,
+                React.createElement(react_router_dom_1.Switch, null,
+                    React.createElement(react_router_dom_1.Route, { path: "/", component: TodoApp_1.default, exact: true }),
+                    React.createElement(react_router_dom_1.Route, { path: "/edit/:id", component: EditTodo_1.default, exact: true }))))));
 };
 exports.default = App;

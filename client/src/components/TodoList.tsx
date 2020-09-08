@@ -10,6 +10,7 @@ const TodoList: React.FC = () => {
   const options: string[] = ['All', 'Open', 'Completed']
   const [value, setValue] = useState('All')
   const { todos } = useContext(TodosContext)
+  
   return (
     <>
       <Select

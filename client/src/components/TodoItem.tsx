@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import {Box, CheckBox, Text, Button} from 'grommet'
+import {Box, CheckBox, Text} from 'grommet'
 import styled from 'styled-components'
 import TodoDetails from './TodoDetails'
 import {Todo} from 'dummy-data'
@@ -35,9 +35,9 @@ const TodoItem: React.FC<Props> = ({todo}: Props) => {
           <CheckBox
             checked={checked}
             label={
-              <Button onClick={onButtonClick}>
+              <Text onClick={onButtonClick}>
                 <StyledText complete={checked}>{todo.title}</StyledText>
-              </Button>
+              </Text>
             }
             onChange={() => {
               toggleTodo(todo.title)
