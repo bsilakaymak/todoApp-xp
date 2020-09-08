@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import {Grid, Box, TextInput, FormField, Button, Text, Layer, TextArea, Form} from 'grommet'
 import styled from 'styled-components'
 import TodoList from './TodoList'
 import {Tasks, AddCircle} from 'grommet-icons'
+import { TodosContext } from './TodosContext'
+import { v4 as uuidv4 } from 'uuid'; 
 
 const StyledDiv = styled.div`
   display: flex;
@@ -15,11 +17,12 @@ const StyledDiv = styled.div`
 const TodoApp: React.FC = () => {
   const [descOpen, setDescOpen] = useState(false)
   const [formData, setFormData] = useState({
+    id:uuidv4(),
     title: '',
     description: '',
     completed: false,
   })
-  
+  const {addTodo} = useContext(TodosContext)
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({...formData, [e.target.name]: e.target.value})
@@ -81,6 +84,7 @@ const TodoApp: React.FC = () => {
                 onSubmit={() => {
                   setDescOpen(false)
                   setFormData({
+                    id:uuidv4(),
                     title: '',
                     description: '',
                     completed: false,
@@ -97,7 +101,7 @@ const TodoApp: React.FC = () => {
                 />
                 <Box align="center" justify="center">
                   <Box pad="0.5rem">
-                    <Button type="submit" label="Add Description" primary />
+                    <Button type="submit" onClick={()=>{addTodo(formData)}} label="Add Description" primary />
                   </Box>
                 </Box>
               </Form>{' '}

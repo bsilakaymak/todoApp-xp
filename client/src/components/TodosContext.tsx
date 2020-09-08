@@ -28,7 +28,6 @@ export const TodosProvider: React.FC<Props> = ({children}: Props) => {
 
   const deleteTodo = (todo: string) => {
     const newTodos = todos.filter(todoItem => todoItem.title !== todo)
-    console.log(todoList)
     setTodos(newTodos)
   }
 

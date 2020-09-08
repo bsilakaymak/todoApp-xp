@@ -46,6 +46,7 @@ exports.TodosProvider = ({ children }) => {
         const toggleIndex = todos.map(todoItem => todoItem.title).indexOf(todo);
         todos[toggleIndex].completed = !todos[toggleIndex].completed;
         todos.splice(toggleIndex, 1, todos[toggleIndex]);
+        setTodos([...todos]);
     };
     return (react_1.default.createElement(exports.TodosContext.Provider, { value: {
             todos: todos,

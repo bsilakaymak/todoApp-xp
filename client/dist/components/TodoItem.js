@@ -43,7 +43,7 @@ const TodoItem = ({ todo }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(grommet_1.Box, { align: "start", pad: "large" },
             react_1.default.createElement(grommet_1.Box, { align: "center", pad: { left: '0', right: '0' } },
-                react_1.default.createElement(grommet_1.CheckBox, { checked: checked, label: react_1.default.createElement(grommet_1.Button, { onClick: onButtonClick },
+                react_1.default.createElement(grommet_1.CheckBox, { checked: checked, label: react_1.default.createElement(grommet_1.Text, { onClick: onButtonClick },
                         react_1.default.createElement(StyledText, { complete: checked }, todo.title)), onChange: () => {
                         toggleTodo(todo.title);
                         setChecked(todo.completed);
