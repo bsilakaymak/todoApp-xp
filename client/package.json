@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "grommet": "^2.15.0",
+    "grommet-icons": "^4.4.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.0",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+    "@types/styled-components": "^5.1.3",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "awesome-typescript-loader": "^5.2.1",
@@ -40,7 +47,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "postinstall": "rm -rf node_modules/@types/react-native"
   },
   "author": "",
   "license": "ISC"
