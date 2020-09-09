@@ -3,26 +3,26 @@
     "target": "ES2019",
     "module": "CommonJS",
     "jsx": "react",
-
     "baseUrl": "src",
     "rootDir": "src",
     "outDir": "dist",
-
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
     "paths": {
-        "components/*": [
-          "src/components/*"
-        ],
-      }
-  }
+      "components/*": [
+        "src/components/*"
+      ],
+    }
+  },
+  "include": [
+    "src"
+  ]
 }
