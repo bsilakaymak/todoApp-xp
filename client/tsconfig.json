@@ -17,9 +17,10 @@
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ],
+      "*": [
+        "*",
+        "app/*"
+      ]
     }
   },
   "include": [
